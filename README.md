@@ -12,8 +12,18 @@ Kachery documentation can be found here: https://github.com/kacheryhub/kachery-d
 
 Installation:
 
-1. Create new virtual environment, with virtualenv/pyenv etc. (I don't use conda so can't help there)
-2. Install numpy and kachery-client inside python environment.
+1. Create new virtual environment, with virtualenv/pyenv/conda. Conda commands:
+```
+conda create --name kachery python=3.8
+conda activate kachery
+```
+
+3. Install numpy and kachery-client inside python environment.
+
+```
+conda install -c conda-forge nodejs
+pip install --upgrade kachery-client
+```
 
 3. Either:
   - Install kachery-daemon globally on your system
