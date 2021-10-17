@@ -11,8 +11,10 @@ Kachery consists of two elements:
 Kachery documentation can be found here: https://github.com/kacheryhub/kachery-doc
 
 Installation:
+1. Install miniconda from [here](https://docs.conda.io/en/latest/miniconda.html) and follow the 
+[instructions](https://conda.io/projects/conda/en/latest/user-guide/install/index.html#regular-installation)
 
-1. Create new virtual environment, with virtualenv/pyenv/conda. Conda commands:
+2. Create new virtual environment, with virtualenv/pyenv/conda. Conda commands:
 ```
 conda create --name kachery python=3.8
 conda activate kachery
@@ -22,32 +24,40 @@ conda activate kachery
 
 ```
 conda install -c conda-forge nodejs
+pip install numpy
 pip install --upgrade kachery-client
 ```
 
-3. Either:
+4. Either:
   - Install kachery-daemon globally on your system
   - Install kachery-daemon in the environment created above
 
-4. Start your kachery daemon instance:
+```
+pip install --upgrade kachery-daemon
+```
+
+5. Start your kachery daemon instance:
   
-  - As per the kachery documentation (https://github.com/kacheryhub/kachery-doc/blob/main/doc/hostKacheryNode.md#running-the-daemon):
-    - kachery-daemon-start --label <WHATEVER YOU CHOOSE> --owner <YOUR GOOGLE ACCOUNT ID>
-    - You must run this from the same environment that you installed kachery-daemon in.
+  - As per the kachery documentation [here](https://github.com/kacheryhub/kachery-doc/blob/main/doc/hostKacheryNode.md#running-the-daemon)
+  - You must run this from the same environment that you installed kachery-daemon in.:
+
+```
+kachery-daemon-start --label <WHATEVER YOU CHOOSE> --owner <YOUR GOOGLE ACCOUNT ID (GMAIL)>
+```
   
-5. Registration of kachery node:
+6. Registration of kachery node:
   - Using the same google account email you used to start the kachery node, log into https://www.kacheryhub.org/
   - Click "Register a new node"
-  - With the kachery instance running, run "kachery-daemon info" to retrieve your node ID.
+  - With the kachery instance running, open new terminal and run "kachery-daemon info" to retrieve your node ID.
   - Complete node registration with this node ID.
 
-6. Join spikeforest channel:
+7. Join spikeforest channel:
   - Click on your node in Kacheryhub, and click "Join a channel for this node"
   - Join a channel with channel name "spikeforest"
   - After joining, add the passcode "sf-rMIASUHn" to the node configuration.
   - Restart your local kachery node for changes to take effect.
 
-7. Trying out your installation:
+8. Trying out your installation:
   - Enter the environment where your kachery-client is installed, ensuring kachery-daemon is running with the above configuration completed.
   - Run the test file in this repo: DataRetrieval.py
   - If you get a load json printed out in the console the setup has succeeded.
